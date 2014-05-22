@@ -1,4 +1,4 @@
-define(['react', 'google-map'], function (React, GMaps) {
+define(['react', 'google-map', 'superagent'], function (React, GMaps, Request) {
     var Map = React.createClass({
         // initialize local variables
         getInitialState: function() {
@@ -20,11 +20,25 @@ define(['react', 'google-map'], function (React, GMaps) {
                 gmaps_api_key: '',
                 gmaps_sensor: false
             }
+        }/*,
+
+        componentWillMount: function() {
+            this.fetchMarkers();
+            setInterval(this.fetchMarkers, 2000);
+        }*/,
+
+        fetchMarkers: function() {
+            Request
+                .get('scripts/map/model/markers.json')
+                .set('X-Requested-With', 'XMLHttpRequest')
+                .set('Cache-Control', 'no-cache,no-store,must-revalidate,max-age=-1')
+                .end(function(res){
+                    this.updateMarkers(res.body.points);
+                }.bind(this));
         },
 
         // update geo-encoded markers
         updateMarkers : function(points) {
-
             var markers = this.state.markers;
             var map = this.state.map;
 
@@ -74,7 +88,9 @@ define(['react', 'google-map'], function (React, GMaps) {
             var map = new GMaps.Map( this.getDOMNode(), mapOptions);
 
             this.setState( { map : map } );
+
             this.updateMarkers(this.props.points);
+            setInterval(this.fetchMarkers, 2000);
         }
     });
 

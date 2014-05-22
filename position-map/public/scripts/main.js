@@ -8,7 +8,8 @@ require.config({
         "goog": "vendors/requirejs-plugins/src/goog",
         "async": "vendors/requirejs-plugins/src/async",
         "propertyParser" : 'vendors/requirejs-plugins/src/propertyParser',
-        "google-map": "map/google-map"
+        "google-map": "map/google-map",
+        "superagent": "vendors/superagent/superagent"
     },
     "jsx" : {
         "fileExtension": ".jsx"

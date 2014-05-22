@@ -4,10 +4,11 @@
   "dependencies": {
         "requirejs": "latest",
         "react": "latest",
-		"jsx-requirejs-plugin": "latest",
 		"requirejs": "latest",
 		"requirejs-plugins": "latest",
-		"requirejs-text": "latest"
+		"requirejs-text": "latest",
+        "jquery": "latest",
+        "superagent": "latest"
   },
   "authors": [
     "Leandro Soler <martosoler@yahoo.com.ar>"

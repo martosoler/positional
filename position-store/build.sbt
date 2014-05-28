@@ -9,12 +9,9 @@ scalacOptions := Seq("-unchecked", "-deprecation", "-encoding", "utf8")
 resolvers += "Typesafe repository" at "http://repo.typesafe.com/typesafe/releases/"
 
 libraryDependencies ++= {
-  val akkaV = "2.3.0"
+  val akkaV = "2.3.2"
   val reactiveMongoV = "0.10.0"
   Seq(
-    "org.reactivemongo"   %%  "reactivemongo" % reactiveMongoV,
-    "com.typesafe.akka"   %%  "akka-actor"    % akkaV,
-    "com.typesafe.akka"   %%  "akka-testkit"  % akkaV   % "test",
-    "org.specs2"          %%  "specs2-core"   % "2.3.7" % "test"
+    "org.reactivemongo"   %%  "reactivemongo" % reactiveMongoV
   )
 }

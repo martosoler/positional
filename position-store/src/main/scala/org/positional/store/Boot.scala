@@ -3,6 +3,7 @@ package org.positional.store
 import akka.actor.ActorSystem
 import akka.actor.Props
 import org.positional.store.message.StorePosition
+import org.positional.store.message.RetrievePosition
 
 object Boot extends App {
 	// we need an ActorSystem to host our application in
@@ -12,4 +13,8 @@ object Boot extends App {
   val positionStoreService = system.actorOf(Props[PositionStoreActor], "position-store-service")
   
   positionStoreService ! StorePosition("123", "123")
+  
+  positionStoreService ! RetrievePosition("1")
+  
+  //system.shutdown
 }

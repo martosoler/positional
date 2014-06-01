@@ -4,9 +4,9 @@ import akka.actor.Actor
 import akka.event.Logging
 import org.positional.store.message.StorePosition
 import org.positional.store.message.RetrievePosition
-import org.positional.store.db.PositionStore
+import org.positional.store.db.PositionMongoStore
 
-class PositionStoreActor extends Actor with PositionStore {
+class PositionStoreActor extends Actor with PositionMongoStore {
   val log = Logging(context.system, this)
   
   def receive = {

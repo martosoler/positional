@@ -11,7 +11,7 @@ import scala.concurrent.Future
 import akka.actor.ActorSystem
 import com.typesafe.config._
 
-trait PositionStore {
+trait PositionMongoStore {
   implicit val system: ActorSystem = ActorSystem("position-store")
 
   val driver = new MongoDriver(system)
@@ -43,14 +43,12 @@ trait PositionStore {
   val db = connection.map(_.db("followme")).get
 
   def retrievePositions(id: String) = {
-    // Select only the documents which field 'firstName' equals 'Jack'
+
     val query = BSONDocument("id" -> id)
 
-    val collection = db("positions")
+    val positions = db("positions")
 
-    /* Let's run this query then enumerate the response and print a readable
-   * representation of each document in the response */
-    collection.
+    positions.
       find(query).
       cursor[BSONDocument].
       enumerate().apply(Iteratee.foreach { doc =>

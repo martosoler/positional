@@ -11,7 +11,7 @@ import org.positional.receiver.imhere.ImHereServiceActorRouting
 object Boot extends App {
 
   // we need an ActorSystem to host our application in
-  implicit val system = ActorSystem("on-spray-can")
+  implicit val system = ActorSystem("position-receiver")
 
   // create and start our service actor
   val imHereService = system.actorOf(Props[ImHereServiceActorRouting], "im-here-service")

@@ -1,4 +1,4 @@
-package org.positional.provider.dispatcher
+package org.positional.provider.controller
 
 import akka.actor._
 

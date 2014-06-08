@@ -12,6 +12,7 @@ class PositionStoreActor extends Actor with PositionMongoStore {
   def receive = {
     case m: StorePosition =>
     	log.info("Store the position: " + m)
+    	storePosition(m.pos)
     	
     case m: RetrievePosition => 
       	log.info("Retrieve position for user: " + m.id)

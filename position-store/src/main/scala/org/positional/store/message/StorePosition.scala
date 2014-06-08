@@ -1,3 +1,5 @@
 package org.positional.store.message
 
-case class StorePosition(latitude: String, longitude: String)
+import org.positional.store.db.Position
+
+case class StorePosition(pos: Position)

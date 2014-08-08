@@ -6,12 +6,12 @@ scalaVersion  := "2.10.3"
 
 scalacOptions := Seq("-unchecked", "-deprecation", "-encoding", "utf8")
 
+resolvers += "Sonatype Snapshots" at "https://oss.sonatype.org/content/repositories/snapshots/"
+
 resolvers += "Typesafe repository" at "http://repo.typesafe.com/typesafe/releases/"
 
 libraryDependencies ++= {
-  val akkaV = "2.3.2"
-  val reactiveMongoV = "0.10.0"
   Seq(
-    "org.reactivemongo"   %%  "reactivemongo" % reactiveMongoV
+    "org.reactivemongo" %% "reactivemongo" % "0.10.5.akka23-SNAPSHOT"
   )
 }

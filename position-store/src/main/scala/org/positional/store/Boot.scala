@@ -13,11 +13,12 @@ object Boot extends App {
   
   // create and start our service actor
   val positionStoreService = system.actorOf(Props[PositionStoreActor], "position-store-service")
+  val id = Random.nextInt.toString
   
   positionStoreService ! StorePosition(
-      Position(Random.nextInt.toString, System.nanoTime().toString, System.currentTimeMillis().toString))
+      Position(id, System.nanoTime().toString, System.currentTimeMillis().toString))
   
-  positionStoreService ! RetrievePosition("1")
+  positionStoreService ! RetrievePosition(id)
   
   //system.shutdown
 }

@@ -50,7 +50,7 @@ object PositionalBuild extends Build {
     	.aggregate(position_store, position_provider, position_receiver)
   
   lazy val position_store = 
-    Project("position_store", file("position-store"),
+    Project("position-store", file("position-store"),
         settings = buildSettings ++ Seq(
             resolvers := resolversList,
             libraryDependencies ++= Seq(
@@ -59,7 +59,7 @@ object PositionalBuild extends Build {
             ))
 
   lazy val position_provider = 
-    Project("position_provider", file("position-provider"),
+    Project("position-provider", file("position-provider"),
         settings = buildSettings ++ Seq(
             resolvers := resolversList,
             libraryDependencies ++= Seq(
@@ -69,7 +69,7 @@ object PositionalBuild extends Build {
 
 
   lazy val position_receiver = 
-    Project("position_receiver", file("position-receiver"),
+    Project("position-receiver", file("position-receiver"),
         settings = buildSettings ++ Seq(
             resolvers := resolversList,
             libraryDependencies ++= Seq(

@@ -1,9 +1,0 @@
-{
-    "points":[
-        {"latitude":"-31.216979", "longitude":"-64.315231", "label":"Mi casa"},
-        {"latitude":"41.145556", "longitude":"-73.995", "label":"New york"},
-        {"latitude":"13.75", "longitude":"100.466667", "label":"Bangkog"},
-        {"latitude":"-31.216979", "longitude":"-64.315231", "label":"Honk Kong"},
-        {"latitude":"-31.216979", "longitude":"-64.315231", "label":"Paris"}
-    ]
-}

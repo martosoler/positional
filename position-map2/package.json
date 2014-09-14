@@ -6,8 +6,7 @@
   "author": "martosoler",
   "license": "BSD-2-Clause",
   "dependencies": {
-    "react": "0.11.1",
-    "react-map": "0.0.1"
+    "react": "0.11.1"
   },
   "devDependencies": {
     "express": "3.x",

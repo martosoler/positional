@@ -48,6 +48,10 @@ object PositionalBuild extends Build {
   lazy val positional = 
     Project("positional", file("."), settings = buildSettings)
     	.aggregate(position_store, position_provider, position_receiver)
+
+  lazy val follow_me_app =
+    Project("follow-me-app", file("follow-me-app-dummy"),
+      settings = buildSettings ++ Seq(resolvers := resolversList))
   
   lazy val position_store = 
     Project("position-store", file("position-store"),

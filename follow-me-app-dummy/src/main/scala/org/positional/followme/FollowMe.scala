@@ -1,7 +1,6 @@
 package org.positional.followme
 
 import scalaj.http.Http
-import scalaj.http.HttpOptions
 
 object FollowMe extends App {
 
